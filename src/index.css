@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .animate-grow {
+    animation: grow 2s ease-in-out infinite;
+  }
+  
+  @keyframes grow {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  .field-animation {
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .crop-stage-1 {
+    animation: sprout 1s ease-out;
+  }
+  
+  .crop-stage-2 {
+    animation: grow-leaves 1.5s ease-out;
+  }
+  
+  .crop-stage-3 {
+    animation: flower-bloom 2s ease-out;
+  }
+  
+  .crop-stage-4 {
+    animation: fruit-ripen 2.5s ease-out;
+  }
+  
+  @keyframes sprout {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      height: 12px;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes grow-leaves {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes flower-bloom {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fruit-ripen {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(30deg);
+    }
+  }
+}
